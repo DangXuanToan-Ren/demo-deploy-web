@@ -3,48 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ - TechStore (Demo Deploy)</title>
+    <title>Trang chủ - TechStore</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #f4f4f9; color: #333; transition: background-color 0.3s, color 0.3s; }
+        body { background-color: #f4f4f9; color: #333; }
         
-        /* Giao diện Dark Mode */
-        body.dark-mode { background-color: #1a1a1a; color: #f4f4f9; }
-        body.dark-mode .product-card { background: #2d2d2d; box-shadow: 0 5px 15px rgba(255,255,255,0.05); }
-        body.dark-mode .product-title { color: #fff; }
-        body.dark-mode .section-title { color: #00c6ff; }
-        
+        /* Phần Header & Điều hướng */
         header { background-color: #222; color: #fff; padding: 15px 50px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
         header h1 { font-size: 24px; color: #00c6ff; }
-        nav { display: flex; align-items: center; }
         nav a { color: #fff; text-decoration: none; margin-left: 20px; font-weight: bold; transition: 0.3s; }
         nav a:hover { color: #00c6ff; }
 
-        /* Nút chuyển Dark Mode */
-        #theme-toggle { margin-left: 20px; padding: 5px 15px; background-color: #444; color: white; border: 1px solid #666; border-radius: 20px; cursor: pointer; transition: 0.3s; font-weight: bold; }
-        #theme-toggle:hover { background-color: #00c6ff; color: #222; }
-
+        /* Banner chính */
         .hero { background: linear-gradient(to right, #007bff, #00c6ff); color: white; text-align: center; padding: 80px 20px; }
         .hero h2 { font-size: 36px; margin-bottom: 15px; }
         .hero p { font-size: 18px; margin-bottom: 25px; }
         .hero button { padding: 12px 30px; font-size: 16px; background-color: #fff; color: #007bff; border: none; border-radius: 50px; cursor: pointer; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
         .hero button:hover { background-color: #222; color: #fff; }
 
+        /* Khung chứa sản phẩm */
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 28px; text-transform: uppercase; transition: color 0.3s; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 28px; color: #222; text-transform: uppercase; }
         
+        /* Lưới sản phẩm (Tự động xuống hàng trên điện thoại) */
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-        .product-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s, background-color 0.3s; text-align: center; padding-bottom: 20px; }
-        .product-card:hover { transform: translateY(-10px); }
+        .product-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; text-align: center; padding-bottom: 20px; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
         .product-img { width: 100%; height: 200px; object-fit: cover; }
         .product-info { padding: 15px; }
-        .product-title { font-size: 18px; margin-bottom: 10px; transition: color 0.3s; }
+        .product-title { font-size: 18px; margin-bottom: 10px; color: #333; }
         .product-price { color: #e74c3c; font-weight: bold; font-size: 20px; margin-bottom: 15px; }
         
-        .btn-buy { background-color: #28a745; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: 0.3s; width: 80%; font-weight: bold; }
-        .btn-buy:hover { background-color: #218838; transform: scale(1.05); }
+        /* Nút Mua hàng */
+        .btn-buy { background-color: #28a745; color: #fff; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: 0.3s; width: 80%; }
+        .btn-buy:hover { background-color: #218838; }
 
-        footer { text-align: center; padding: 20px; background-color: #222; color: #ccc; margin-top: 40px; font-size: 14px; line-height: 1.5; }
+        /* Chân trang */
+        footer { text-align: center; padding: 20px; background-color: #222; color: #ccc; margin-top: 40px; font-size: 14px; }
     </style>
 </head>
 <body>
@@ -54,22 +49,22 @@
         <nav>
             <a href="#">Trang chủ</a>
             <a href="#">Sản phẩm</a>
-            <button id="theme-toggle">Sáng / Tối</button>
-            <a href="#" id="cart-count">Giỏ hàng (0)</a>
+            <a href="#">Khuyến mãi</a>
+            <a href="#">Giỏ hàng (0)</a>
         </nav>
     </header>
 
     <section class="hero">
         <h2>Khám Phá Công Nghệ Mới Nhất</h2>
         <p>Sản phẩm chính hãng - Giao hàng siêu tốc - Bảo hành trọn đời</p>
-        <button onclick="alert('Cảm ơn bạn đã ghé thăm TechStore!')">Mua Sắm Ngay</button>
+        <button>Mua Sắm Ngay</button>
     </section>
 
     <div class="container">
         <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=600&h=400&fit=crop" alt="Laptop" class="product-img">
+                <img src="https://picsum.photos/300/200?random=1" alt="Laptop" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Laptop Gaming Pro</h3>
                     <p class="product-price">25.000.000đ</p>
@@ -77,7 +72,7 @@
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&h=400&fit=crop" alt="Điện thoại" class="product-img">
+                <img src="https://picsum.photos/300/200?random=2" alt="Điện thoại" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Điện Thoại X 2026</h3>
                     <p class="product-price">18.500.000đ</p>
@@ -85,7 +80,7 @@
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=400&fit=crop" alt="Tai nghe" class="product-img">
+                <img src="https://picsum.photos/300/200?random=3" alt="Tai nghe" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Tai Nghe Bluetooth</h3>
                     <p class="product-price">1.200.000đ</p>
@@ -93,7 +88,7 @@
                 </div>
             </div>
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=400&fit=crop" alt="Đồng hồ" class="product-img">
+                <img src="https://picsum.photos/300/200?random=4" alt="Đồng hồ" class="product-img">
                 <div class="product-info">
                     <h3 class="product-title">Đồng Hồ Thông Minh</h3>
                     <p class="product-price">3.400.000đ</p>
@@ -105,28 +100,7 @@
 
     <footer>
         <p>&copy; 2026 TechStore - Demo Deploy Web</p>
-        <p>Nhóm 3 - Đề tài 17: Deploy Web (Sinh viên thực hiện: Đặng Xuân Toàn)</p>
     </footer>
 
-    <script>
-        // 1. Chức năng cập nhật giỏ hàng
-        let cartTotal = 0;
-        const cartElement = document.getElementById('cart-count');
-        const buyButtons = document.querySelectorAll('.btn-buy');
-
-        buyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                cartTotal++;
-                cartElement.innerText = `Giỏ hàng (${cartTotal})`;
-                alert('Đã thêm sản phẩm vào giỏ hàng!');
-            });
-        });
-
-        // 2. Chức năng Dark Mode
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        themeToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
 </body>
 </html>
